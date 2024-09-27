@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 sidebar bg-light">
+                <h4 class="text-center">Instructor Dashboard</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Assignments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Grades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ml-sm-auto col-lg-10 content">
+                <h2>Welcome, Instructor!</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Your Courses</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">Course 1 <a href="#" class="btn btn-info btn-sm float-right">View</a></li>
+                            <li class="list-group-item">Course 2 <a href="#" class="btn btn-info btn-sm float-right">View</a></li>
+                            <li class="list-group-item">Course 3 <a href="#" class="btn btn-info btn-sm float-right">View</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Recent Activities</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">Student A submitted Assignment 1</li>
+                            <li class="list-group-item">Student B viewed Course 2</li>
+                            <li class="list-group-item">New Enrollment: Student C</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Button to Open Modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCourseModal">
+    Add Course
+</button>
+<!-- View Students -->
+<div class="col-md-6">
+    <h4>Students</h4>
+    <ul class="list-group" id="studentList"></ul>
+</div>
+
+
+<!-- Add Course Modal -->
+<div class="modal fade" id="addCourseModal" tabindex="-1" role="dialog" aria-labelledby="addCourseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCourseModalLabel">Add Course</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addCourseForm">
+                    <div class="form-group">
+                        <label for="courseName">Course Name</label>
+                        <input type="text" class="form-control" id="courseName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="courseDescription">Course Description</label>
+                        <textarea class="form-control" id="courseDescription" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Course</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Button to Open Assignment Modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAssignmentModal">
+    Add Assignment
+</button>
+
+<!-- Add Assignment Modal -->
+<div class="modal fade" id="addAssignmentModal" tabindex="-1" role="dialog" aria-labelledby="addAssignmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addAssignmentModalLabel">Add Assignment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addAssignmentForm">
+                    <div class="form-group">
+                        <label for="assignmentName">Assignment Name</label>
+                        <input type="text" class="form-control" id="assignmentName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="assignmentGrade">Grade</label>
+                        <input type="number" class="form-control" id="assignmentGrade" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Assignment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- View Assignments -->
+<div class="col-md-6">
+    <h4>Assignments</h4>
+    <ul class="list-group" id="assignmentList"></ul>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<script>
+
+// Array to hold courses
+let courses = [];
+
+// Function to add a course
+document.getElementById('addCourseForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const courseName = document.getElementById('courseName').value;
+    const courseDescription = document.getElementById('courseDescription').value;
+
+    const course = {
+        name: courseName,
+        description: courseDescription
+    };
+
+    courses.push(course); // Add course to the array
+    displayCourses(); // Update course list
+    $('#addCourseModal').modal('hide'); // Hide modal
+    this.reset(); // Reset form
+});
+
+// Function to display courses
+function displayCourses() {
+    const courseList = document.querySelector('.list-group'); // Select course list element
+    courseList.innerHTML = ''; // Clear existing list
+
+    courses.forEach((course, index) => {
+        const listItem = document.createElement('li');
+        listItem.className = 'list-group-item';
+        listItem.innerHTML = `${course.name} <a href="#" class="btn btn-info btn-sm float-right">View</a>`;
+        courseList.appendChild(listItem);
+    });
+}
+
+// Array to hold students
+let students = [
+    { name: 'Student A', email: 'studentA@example.com' },
+    { name: 'Student B', email: 'studentB@example.com' },
+];
+
+// Function to display students
+function displayStudents() {
+    const studentList = document.getElementById('studentList'); // Select student list element
+    studentList.innerHTML = ''; // Clear existing list
+
+    students.forEach((student) => {
+        const listItem = document.createElement('li');
+        listItem.className = 'list-group-item';
+        listItem.innerHTML = `${student.name} (${student.email})`;
+        studentList.appendChild(listItem);
+    });
+}
+
+// Call the function to display students when the page loads
+displayStudents();
+
+// Array to hold assignments
+let assignments = [];
+
+// Function to add an assignment
+document.getElementById('addAssignmentForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const assignmentName = document.getElementById('assignmentName').value;
+    const assignmentGrade = document.getElementById('assignmentGrade').value;
+
+    const assignment = {
+        name: assignmentName,
+        grade: assignmentGrade
+    };
+
+    assignments.push(assignment); // Add assignment to the array
+    displayAssignments(); // Update assignment list
+    $('#addAssignmentModal').modal('hide'); // Hide modal
+    this.reset(); // Reset form
+});
+
+// Function to display assignments
+function displayAssignments() {
+    const assignmentList = document.getElementById('assignmentList'); // Select assignment list element
+    assignmentList.innerHTML = ''; // Clear existing list
+
+    assignments.forEach((assignment) => {
+        const listItem = document.createElement('li');
+        listItem.className = 'list-group-item';
+        listItem.innerHTML = `${assignment.name} - Grade: ${assignment.grade}`;
+        assignmentList.appendChild(listItem);
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

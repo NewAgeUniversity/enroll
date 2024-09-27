@@ -13,71 +13,103 @@
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <script defer="defer" src="/bundle.js"></script>
-    
     <style>
-        .hero-section {
-            position: relative;
-            height: 80vh;
-            background: url('Assets/Images/Hero1.jpg') no-repeat center center;
-             background-size: cover;
-            background-color: #000; /* Fallback color */
-            overflow: hidden;
-        }
-        /*.hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(221, 220, 220, 0.01), rgba(0, 0, 0, 0.05));  Dark overlay 
-            z-index: 0;
-        }*/
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            text-align: center;
-            padding: 0 1rem;
-            z-index: 1;
-        }
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: bold;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
-        }
-        .hero-content h4 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        .hero-content a {
-            font-size: 1rem;
-            color: #fff;
-            text-decoration: none;
-            background-color: #007bff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.25rem;
-            font-weight: bold;
-        }
+       /* Ensure the hero section takes up the full viewport height */
+.hero-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background: url('/Assets/Images/Hero1.jpg') no-repeat center center/cover /* Your image */ !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dark overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+}
+
+/* Content inside the hero section */
+.hero-content {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    z-index: 1; /* To ensure the content is on top of the overlay */
+}
+
+/* Button style */
+.hero-content a {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
         .hero-content a:hover {
             background-color: #0056b3;
         }
         .card-img-top{
             max-height: 200px;
         }
+        .course-image {
+    height: 35%; /* Image will take up 35% of the container width */
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the area without distortion */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+/* Set a fixed height for images */
+.custom-img {
+    height: 200px; /* Adjust this value as needed */
+    min-height: 30%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    width: 100%;
+    display: block;
+}
+
+/* Ensure all cards have the same height */
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+/* Make the card-body stretch and push the button to the bottom */
+.card-body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ensure the text and button layout remains consistent */
+.btn {
+    margin-top: auto; /* Pushes the button to the bottom of the card */
+}
+
     </style>
 </head>
 
 <body>
     <div id="header"></div>
     <section class="hero-section">
-        <div class="hero-overlay"></div> <!-- Overlay to darken the background -->
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-        <strong><h1>Welcome to NAU</h1></strong>
+            <h1><strong>Welcome to NAU</strong></h1>
             <h4><strong>Discover a world of opportunities and start your journey with us today.</strong></h4>
-            <a href="#learn-more">Learn More</a>
+            <a href="#learn-more" class="btn btn-primary">Learn More</a>
         </div>
     </section>
 
@@ -113,8 +145,9 @@
                 hands-on experience needed to excel in your chosen field.</p>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <div class="col">
-                    <div class="card"><img src="/Assets/Images/dabi.jpg" class="card-img-top" alt="Data Analysis">
-                        <div class="card-body">
+                    <div class="card h-100">
+                        <img src="Assets/Images/dabi.jpg" class="card-img-top custom-img" alt="Data Analysis">
+                        <div class="card-body d-flex flex-column">
                             <h3 class="card-title">Data Analysis and BI</h3>
                             <p class="card-text">Become a data-driven decision maker with our comprehensive Data
                                 Analysis & Business Intelligence course.</p><a href="/courses-overview/dabi.html"
@@ -123,8 +156,9 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card"><img src="Assets/Images/webdev.jpg" class="card-img-top" alt="Web Development">
-                        <div class="card-body">
+                    <div class="card h-100">
+                        <img src="Assets/Images/webdev.jpg" class="card-img-top custom-img" alt="Web Development">
+                        <div class="card-body d-flex flex-column">
                             <h3 class="card-title">Web Development</h3>
                             <p class="card-text">Build the future with our Web Development course. Learn to create
                                 dynamic, responsive websites using the latest technologies and best practices.</p><a
@@ -133,9 +167,9 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card"><img src="Assets/Images/python.jpg" class="card-img-top"
-                            alt="Python Programming">
-                        <div class="card-body">
+                    <div class="card h-100">
+                        <img src="Assets/Images/python.jpg" class="card-img-top custom-img" alt="Python Programming">
+                        <div class="card-body d-flex flex-column">
                             <h3 class="card-title">Python Programming</h3>
                             <p class="card-text">Master the fundamentals of Python programming. From basics to advanced concepts, this course is your gateway to versatile coding skills.</p>
                             <a href="/courses-overview/python.html" class="btn btn-secondary">Learn More</a>
@@ -143,8 +177,9 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card"><img src="Assets/Images/ai.jpg" class="card-img-top" alt="AI for Business">
-                        <div class="card-body">
+                    <div class="card h-100">
+                        <img src="Assets/Images/ai.jpg" class="card-img-top custom-img" alt="AI for Business">
+                        <div class="card-body d-flex flex-column">
                             <h3 class="card-title">AI for Business</h3>
                             <p class="card-text">Discover how to harness AI for daily business operations. Learn to implement AI-driven strategies that optimize productivity and growth.</p>
                             <a href="/courses-overview/ai.html" class="btn btn-secondary">Learn More</a>
@@ -152,8 +187,9 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card"><img src="/Assets/Images/ux.jpg" class="card-img-top" alt="UI and UX Design">
-                        <div class="card-body">
+                    <div class="card h-100">
+                        <img src="Assets/Images/ux.jpg" class="card-img-top custom-img" alt="UI and UX Design">
+                        <div class="card-body d-flex flex-column">
                             <h3 class="card-title">UI and UX Design</h3>
                             <p class="card-text">Design intuitive user experiences and interfaces. Learn the principles of creating user-friendly, engaging digital products.</p>
                             <a href="/courses-overview/uiux.html" class="btn btn-secondary">Learn More</a>
@@ -161,8 +197,9 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card"><img src="/Assets/Images/ms.jpg" class="card-img-top" alt="UI and UX Design">
-                        <div class="card-body">
+                    <div class="card h-100">
+                        <img src="Assets/Images/ms.jpg" class="card-img-top custom-img" alt="Microsoft Office">
+                        <div class="card-body d-flex flex-column">
                             <h3 class="card-title">Microsoft Office</h3>
                             <p class="card-text">Become proficient in Microsoft Office. Learn to use Word, Excel, PowerPoint, and other tools to boost your productivity.</p>
                             <a href="/courses-overview/uiux.html" class="btn btn-secondary">Learn More</a>
