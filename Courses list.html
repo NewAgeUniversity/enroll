@@ -15,6 +15,9 @@
 <!-- Optional SVG for Scalable Icons -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
+    *{
+        box-sizing: border-box;
+    }
     .courses-hero-section {
         position: bottom;
         height: 84vh;
@@ -25,17 +28,21 @@
         text-shadow:#ffffff
     }
     .courses-hero-section h1 {
-            color: white;
+            color: rgb(3, 3, 3);
             font-size: 3.5rem;
             text-align: center;
         }
 
     .course-section{
         color: black;
+        padding: 30px;
     }
 
     .course-container {
     display: flex;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 0 auto;
     align-items: stretch; /* Makes the image and text stretch to the same height */
     gap: 20px; /* space between the image and the text */
 }
@@ -43,14 +50,16 @@
 .course-item {
     background-color: #f9f9f9;
     padding: 0;
+    height: auto;
     border: 1px solid #ddd;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     overflow: hidden; /* Ensures no content spills out */
 }
 
 .course-image {
-    width: 35%; /* Image will take up 35% of the container width */
+    height: 80%;
+    width: 38%; /* Image will take up 35% of the container width */
 }
 
 .course-image img {
@@ -110,11 +119,16 @@
 @media (max-width: 768px) {
     .course-container {
         flex-direction: column; /* Stack the image and content vertically */
+        width: 90%;
+        max-width: 100%;
+
+        padding: 20px;
+        margin: 0 auto;
     }
 
     .course-image {
         width: 100%;
-        height: 200px; /* Adjust height for mobile */
+        height: auto; /* Adjust height for mobile */
     }
 
     .course-image img {
@@ -150,7 +164,6 @@
 
     <!-- Hero Section -->
     <section id="home" class="courses-hero-section">
-        <div class="hero-overlay"></div>
         <div class="container"> 
            <div class="hero-content1"> <h1><strong>Our Courses</strong></h1>
         </div>
