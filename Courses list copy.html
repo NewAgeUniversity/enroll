@@ -3,6 +3,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Age University - A New Way of Learning</title>
     <link rel="stylesheet" href="css\styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   
     <!-- Standard Favicon for Browsers -->
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 
@@ -124,6 +126,15 @@
     background-color: #5a5b5c;
 }
 
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+.card {
+    border-radius: 0.5rem;
+    height: 100%;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .courses-hero-section {
@@ -179,6 +190,15 @@
         font-size: 1.1rem;
         background-color: #f9f9f9
     }
+    .card-img-top {
+        height: 250px;
+    }
+    .card-body {
+        padding: 10px;
+    }
+    .card {
+        margin: 0;
+    }
 }
 .new{
     padding: 20px;
@@ -206,23 +226,23 @@
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="courses-section">
+    
         <div class="container">
           <!-- <div class="course-grid"> -->
-            <div class="course-item">
-                <section class="course-container">
-                    <div class="course-image">
-                        <img src="Assets/Images/dabi.jpg" alt="Data Analysis and Business Intelligence">
-                    </div>
-                    <div class="course-content">
-                        <h3>Data Analysis and Business Intelligence</h3>
-                        <h6>Become a data-driven decision maker with our comprehensive data analysis course. Learn to interpret complex 
-                        data sets, draw meaningful insights, and apply them to real-world scenarios.</h6>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="Assets/Images/dabi.jpg" class="card-img-top" alt="Data Analysis and Business Intelligence">
+                        <div class="card-body">
+                        <h3 class="card-title" >Data Analysis and Business Intelligence</h3>
+                        <h5 class="card-text">Become a data-driven decision maker with our comprehensive data analysis course. Learn to interpret complex 
+                        data sets, draw meaningful insights, and apply them to real-world scenarios.</h5>
                         <a href="./courses-overview/dabi.html" class="btn-secondary">Learn More</a>
                     </div>
-                </section>
+                </div>
             </div>
-            <div class="course-item">
+            <section id="courses" class="courses-section"></section>
+            <div class="row">
                 <section class="course-container">
                     <div class="course-image">
                         <img src="Assets/Images/webdev.jpg" alt="Web Development">
@@ -552,6 +572,7 @@
     
     // Example of future interactivity, such as dynamic content loading or form validation
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script
 src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>    
