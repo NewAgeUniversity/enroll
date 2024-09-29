@@ -14,21 +14,68 @@
     <!-- Custom CSS -->
     <link href="/enroll/css/styles.css" rel="stylesheet"> <!-- Ensure this path is correct for your custom styles -->
 <style>
+    /* Ensure proper spacing and font sizes on mobile */
     @media (max-width: 576px) {
         .navbar {
-            font-size: 1rem;
+            font-size: 0.8rem;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         .navbar-brand {
-            font-size: 1rem;
+            flex-grow: 1; /* 15% */
+            max-width: 15%;
+}
+        .navbar-brand img {
+            height: 40px; /* Smaller logo on mobile */
+            object-fit: contain; /* Ensure the image doesn't stretch, but fills the box */
+        }
+        .navbar-text {
+            font-size: 0.8rem; /* Slightly smaller text on mobile */
+            white-space: nowrap; /* Prevent wrapping of text */ 
+            overflow: hidden; /* Prevent overflow */
+            text-overflow: ellipsis; /* Add ellipsis if text is too long */
+            flex-grow: 7; /* 70% */
+            max-width: 70%;
+            text-overflow: ellipsis;
         }
         .navbar-nav .nav-link {
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
         .navbar-toggler {
-            margin-right :5px;
+            margin-left: auto; /* Push hamburger icon to the right */
+            padding: 0.25rem 0.5rem;
+            font-size: 0.85rem;
+            flex-grow: 1; /* 15% */    
+            max-width: 15%;
+            margin-left: auto;
         }
     }
+
+    /* Custom styles for the navbar */
+    .navbar-brand img {
+        height: 60px;
+        margin-right: 0;
+        width: 50px; /* Fixed size */
+        object-fit: cover; /* Crop the image within the box */
+    }
+    .navbar-text {
+        font-size: 1.3rem;
+        margin-left: 5px;
+        white-space: nowrap; /* Prevent text from wrapping */
+        color: black;
+    }
+    .navbar {
+        display: flex;
+        align-items: center; /* Vertically align image and text */
+        justify-content: space-between; /* Ensure space between text and hamburger */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 </style>
+
 </head>
 <body>
  <!-- Header -->
@@ -38,7 +85,11 @@
             <!-- Logo -->
             <a class="navbar-brand" href="#">
                 <img src="/enroll/Assets/Images/NAU1.png" alt="NAU Logo" class="d-inline-block align-text-top" style="height: 70px;"></a>
-            <a class="navbar" style="font-size: 25px;"> New Age University</a>
+            </a>
+
+            <!-- Text beside the logo -->
+            <span class="navbar-text"><strong>New Age University</strong></span>
+
 
             <!-- Menu Links -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
