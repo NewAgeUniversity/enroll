@@ -12,120 +12,205 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192x192.png">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-    <script defer="defer" src="./bundle.js"></script>
+    <!-- Open Graph for Facebook & other platforms -->
+    <meta property="og:title" content="New Age University | Enroll Now">
+    <meta property="og:description"
+        content="Join our free online courses with hands-on internships! Cohort 1 starts January 13, 2025.">
+    <meta property="og:image" content="https://newageuniversity.github.io/assets/NAU.jpg">
+    <meta property="og:url" content="https://newageuniversity.github.io/enroll">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="New Age University | Enroll Now">
+    <meta name="twitter:description"
+        content="Get hands-on experience and real-world skills with New Age University’s free online courses.">
+    <meta name="twitter:image" content="https://newageuniversity.github.io/assets/NAU.jpg">
+
     <style>
-       /* Ensure the hero section takes up the full viewport height */
-.hero-section1 {
-    position: relative;
-    height: 100vh; /* Full viewport height */
-    background: url('./Assets/Images/Hero1.jpg') no-repeat center center/cover /* Your image */ !important;
-    display: flex;
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
+        /* Ensure the hero section takes up the full viewport height */
+        .hero-section1 {
+            position: relative;
+            height: 100vh;
+            /* Full viewport height */
+            background: url('./Assets/Images/Hero1.jpg') no-repeat center center/cover
+                /* Your image */
+                !important;
+            display: flex;
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* Dark overlay */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-}
+        /* Dark overlay */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent black */
+        }
 
-/* Content inside the hero section */
-.hero-content {
-    position: relative;
-    color: #fff;
-    text-align: center;
-    z-index: 1; /* To ensure the content is on top of the overlay */
-}
+        /* Content inside the hero section */
+        .hero-content {
+            position: relative;
+            color: #fff;
+            text-align: center;
+            z-index: 1;
+            /* To ensure the content is on top of the overlay */
+        }
 
-/* Button style */
-.hero-content a {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
+        /* Button style */
+        .hero-content a {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
 
         .hero-content a:hover {
             background-color: #0056b3;
         }
-        .card-img-top{
+
+        .card-img-top {
             max-height: 200px;
         }
+
         .course-image {
-    height: 35%; /* Image will take up 35% of the container width */
-}
+            height: 35%;
+            /* Image will take up 35% of the container width */
+        }
 
-.course-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image fills the area without distortion */
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-/* Set a fixed height for images */
-.custom-img {
-    height: 200px; /* Adjust this value as needed */
-    min-height: 30%;
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    width: 100%;
-    display: block;
-}
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Ensures the image fills the area without distortion */
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
 
-/* Ensure all cards have the same height */
-.card {
-    display: flex;
-    flex-direction: column;
-    height: 100%; 
-}
+        /* Set a fixed height for images */
+        .custom-img {
+            height: 200px;
+            /* Adjust this value as needed */
+            min-height: 30%;
+            object-fit: cover;
+            /* Ensures the image covers the area without distortion */
+            width: 100%;
+            display: block;
+        }
 
-/* Make the card-body stretch and push the button to the bottom */
-.card-body {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    justify-content: space-between;
-}
+        /* Ensure all cards have the same height */
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
 
-/* Ensure the text and button layout remains consistent */
-.btn {
-    margin-top: auto; /* Pushes the button to the bottom of the card */
-}
-@media only screen and (max-width: 768px){
-    .hero-section1 {
-        height: 50vh;
-        padding: 10px;
-    }
+        /* Make the card-body stretch and push the button to the bottom */
+        .card-body {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    .hero-content h1{
-        font-size: 24px
-    }
+        /* Ensure the text and button layout remains consistent */
+        .btn {
+            margin-top: auto;
+            /* Pushes the button to the bottom of the card */
+        }
 
-    .hero-content h4{
-        font-size: 16px;
-    }
+        @media only screen and (max-width: 768px) {
+            .hero-section1 {
+                height: 50vh;
+                padding: 10px;
+            }
 
-    .hero-section1 a {
-        font-size: 14px;
-    }
+            .hero-content h1 {
+                font-size: 24px
+            }
 
+            .hero-content h4 {
+                font-size: 16px;
+            }
 
-}
+            .hero-section1 a {
+                font-size: 14px;
+            }
+        }
 
+        .custom-close {
+            color: red;
+        }
+
+        .custom-close:hover {
+            color: darkred;
+        }
+
+        /* Custom Modal Styling */
+        .modal-content {
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .modal-title {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .modal-body p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .modal-body ul {
+            padding-left: 1em;
+            font-size: 1em;
+            color: #444;
+        }
+
+        .modal-footer {
+            border-top: none;
+        }
+
+        /* Custom Red Close Button */
+        .custom-close {
+            color: red;
+            font-size: 1.1em;
+        }
+
+        .custom-close:hover {
+            color: darkred;
+        }
+
+        /* Register Button Styling */
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
@@ -151,7 +236,7 @@
         </div>
     </section>
 
-        </div>
+    </div>
     </section>
     <section id="about" class="about-section py-5">
         <div class="container">
@@ -184,7 +269,8 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="/enroll/Assets/Images/webdev.jpg" class="card-img-top custom-img" alt="Web Development">
+                        <img src="/enroll/Assets/Images/webdev.jpg" class="card-img-top custom-img"
+                            alt="Web Development">
                         <div class="card-body d-flex flex-column">
                             <h3 class="card-title">Web Development</h3>
                             <p class="card-text">Build the future with our Web Development course. Learn to create
@@ -195,10 +281,12 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="/enroll/Assets/Images/python.jpg" class="card-img-top custom-img" alt="Python Programming">
+                        <img src="/enroll/Assets/Images/python.jpg" class="card-img-top custom-img"
+                            alt="Python Programming">
                         <div class="card-body d-flex flex-column">
                             <h3 class="card-title">Python Programming</h3>
-                            <p class="card-text">Master the fundamentals of Python programming. From basics to advanced concepts, this course is your gateway to versatile coding skills.</p>
+                            <p class="card-text">Master the fundamentals of Python programming. From basics to advanced
+                                concepts, this course is your gateway to versatile coding skills.</p>
                             <a href="./courses-overview/python.html" class="btn btn-secondary">Learn More</a>
                         </div>
                     </div>
@@ -208,7 +296,8 @@
                         <img src="/enroll/Assets/Images/ai.jpg" class="card-img-top custom-img" alt="AI for Business">
                         <div class="card-body d-flex flex-column">
                             <h3 class="card-title">AI for Business</h3>
-                            <p class="card-text">Discover how to harness AI for daily business operations. Learn to implement AI-driven strategies that optimize productivity and growth.</p>
+                            <p class="card-text">Discover how to harness AI for daily business operations. Learn to
+                                implement AI-driven strategies that optimize productivity and growth.</p>
                             <a href="./courses-overview/ai.html" class="btn btn-secondary">Learn More</a>
                         </div>
                     </div>
@@ -218,7 +307,8 @@
                         <img src="/enroll/Assets/Images/ux.jpg" class="card-img-top custom-img" alt="UI and UX Design">
                         <div class="card-body d-flex flex-column">
                             <h3 class="card-title">UI and UX Design</h3>
-                            <p class="card-text">Design intuitive user experiences and interfaces. Learn the principles of creating user-friendly, engaging digital products.</p>
+                            <p class="card-text">Design intuitive user experiences and interfaces. Learn the principles
+                                of creating user-friendly, engaging digital products.</p>
                             <a href="./courses-overview/uiux.html" class="btn btn-secondary">Learn More</a>
                         </div>
                     </div>
@@ -228,13 +318,15 @@
                         <img src="/enroll/Assets/Images/ms.jpg" class="card-img-top custom-img" alt="Microsoft Office">
                         <div class="card-body d-flex flex-column">
                             <h3 class="card-title">Microsoft Office</h3>
-                            <p class="card-text">Become proficient in Microsoft Office. Learn to use Word, Excel, PowerPoint, and other tools to boost your productivity.</p>
+                            <p class="card-text">Become proficient in Microsoft Office. Learn to use Word, Excel,
+                                PowerPoint, and other tools to boost your productivity.</p>
                             <a href="./courses-overview/msoffice.html" class="btn btn-secondary">Learn More</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4"><a href="./Courses list.html" class="btn btn-secondary">Explore More Courses</a>
+            <div class="text-center mt-4"><a href="./Courses list.html" class="btn btn-secondary">Explore More
+                    Courses</a>
             </div>
         </div>
     </section>
@@ -252,7 +344,7 @@
                 <li>Career Support: We provide the tools and resources you need to translate your learning into
                     meaningful career advancements.</li>
             </ul>
-            <h3>Testimonial:</h3>
+            <!--<h3>Testimonial:</h3>
             <blockquote class="blockquote">
                 <p class="mb-0">Joining NAU was the best decision I ever made for my career. The courses were engaging,
                     the instructors fantastic, and the support I received was unparalleled.</p>
@@ -261,8 +353,9 @@
             <blockquote class="blockquote">
                 <p class="mb-0">NAU made learning friendly with their flexible courses that can be completed at your
                     pace, though usually within set timeframe, which breeds accountability.</p>
-                <footer class="blockquote-footer">Ayomide Joshua, NAU Graduate</footer>
-            </blockquote><a href="https://chat.whatsapp.com/DTX3s23Qg0P2XV0TZEJfOr" class="btn btn-secondary">Join Our Community</a>
+                <footer class="blockquote-footer">Ayomide Joshua, NAU Graduate</footer>-->
+            </blockquote><a href="https://chat.whatsapp.com/DTX3s23Qg0P2XV0TZEJfOr" class="btn btn-secondary">Join Our
+                Community</a>
         </div>
     </section>
     <section id="how-it-works" class="py-5">
@@ -299,6 +392,38 @@
             </form>
         </div>
     </section> -->
+    <!-- Bootstrap Modal Trigger Button -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#admissionModal">
+        Admission Info
+    </button>
+
+    <!-- Bootstrap Modal Structure -->
+    <div class="modal fade" id="admissionModal" tabindex="-1" aria-labelledby="admissionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header with Custom Red Close Button -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="admissionModalLabel">Hurry! Admission in Progress</h5>
+                    <button type="button" class="btn-close custom-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <!-- Modal Body with Admission Details -->
+                <div class="modal-body">
+                    <p>Register for the next cohort before the deadlines:</p>
+                    <ul>
+                        <li><strong>Cohort 1:</strong> January 13, 2025 <br> <strong>Deadline:</strong> December 31,
+                            2024</li>
+                        <li><strong>Cohort 2:</strong> July 13, 2025 <br> <strong>Deadline:</strong> June 30, 2025</li>
+                    </ul>
+                </div>
+                <!-- Modal Footer with Optional Buttons -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Register Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="footer"></div>
     <script>function loadHTML(selector, url) {
             fetch(url)
@@ -311,7 +436,8 @@
         loadHTML('#header', '/enroll/components/header.html');
         loadHTML('#footer', '/enroll/components/footer.html');</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="/enroll/bundle.js"></script>
     <script>// Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -320,6 +446,15 @@
                     behavior: 'smooth'
                 });
             });
-        });</script>
+        });
+
+        <!-- JavaScript to Auto-Show Modal on Page Load -->
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var admissionModal = new bootstrap.Modal(document.getElementById("admissionModal"));
+            admissionModal.show();
+        });
+    </script>
 </body>
+
 </html>

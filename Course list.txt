@@ -25,9 +25,11 @@ Here's the compiled list of the 25 courses:
 23. Project Management
 24. Cybersecurity
 25. Sustainable Development and Green Technologies
+26. Software Development
+27. Writing
 
 
-Advice on creating content and courses, while integrating learning that aligns with your goals, here’s some tailored advice:
+Advice on creating content and courses, while integrating learning that aligns with your goals, hereï¿½s some tailored advice:
 
 1. Design for Impact: Ensure that each course you create is designed to have a meaningful impact. Align course content with industry needs and future trends to provide valuable and actionable knowledge.
 
@@ -35,7 +37,7 @@ Advice on creating content and courses, while integrating learning that aligns w
 
 3. Incorporate Modern Tools: Utilize the latest technology and tools to enhance course delivery. Interactive elements, AI-driven features, and modern design can make your courses more engaging and effective.
 
-4. Iterate and Improve: Continuously gather feedback on your courses and use it to make improvements. Iteration is key to refining your content and ensuring it meets your audience’s expectations.
+4. Iterate and Improve: Continuously gather feedback on your courses and use it to make improvements. Iteration is key to refining your content and ensuring it meets your audienceï¿½s expectations.
 
 5. Focus on Quality: Invest time in creating high-quality content. This includes well-researched material, clear and concise explanations, and professional presentation.
 
@@ -76,7 +78,7 @@ To deliver your course effectively using a local LMS and GitHub for hosting, you
 # 4. Website Hosting on GitHub:
 - Repository Setup: Create a GitHub repository to host your course content and LMS code.
 - Static Site Generation: Use GitHub Pages or another static site generator if your LMS content is static.
-- Version Control: Manage and track changes to your course content and LMS using GitHub’s version control system.
+- Version Control: Manage and track changes to your course content and LMS using GitHubï¿½s version control system.
 
 # 5. Design and User Experience:
 - Responsive Design: Ensure the course website is mobile-friendly and accessible on different devices.
@@ -112,9 +114,9 @@ _____________________________________________________________________
 
 Here are a few pieces of advice to help you (Students) with your courses and projects:
 
-1. Prioritize Learning Outcomes: Ensure that each course has clear learning objectives. This will help you focus on what’s most important and measure your progress effectively.
+1. Prioritize Learning Outcomes: Ensure that each course has clear learning objectives. This will help you focus on whatï¿½s most important and measure your progress effectively.
 
-2. Leverage Cross-Disciplinary Skills: Many of these courses can complement each other. For example, skills from “Data Analysis and Business Intelligence” can be useful in “AI (Machine Learning)” and “Digital Marketing.”
+2. Leverage Cross-Disciplinary Skills: Many of these courses can complement each other. For example, skills from ï¿½Data Analysis and Business Intelligenceï¿½ can be useful in ï¿½AI (Machine Learning)ï¿½ and ï¿½Digital Marketing.ï¿½
 
 3. Apply What You Learn: Practical application reinforces learning. Use real-world projects or personal initiatives to apply concepts from your courses.
 

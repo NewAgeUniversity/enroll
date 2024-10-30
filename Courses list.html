@@ -1,173 +1,185 @@
-<html><head>
+<html>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAU Courses</title>
     <link href="/enroll/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <!-- Standard Favicon for Browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="/enroll/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/enroll/favicon-32x32.png">
 
-<!-- For Apple devices (iOS, macOS) -->
-<link rel="apple-touch-icon" sizes="180x180" href="/enroll/apple-touch-icon.png">
+    <!-- For Apple devices (iOS, macOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/enroll/apple-touch-icon.png">
 
-<!-- For Android devices and PWA -->
-<link rel="icon" type="image/png" sizes="192x192" href="/enroll/favicon-192x192.png">
+    <!-- For Android devices and PWA -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/enroll/favicon-192x192.png">
 
-<!-- Optional SVG for Scalable Icons -->
-<link rel="icon" href="/enroll/favicon.svg" type="image/svg+xml">
-<style>
-       body {
-    font-family: Arial, sans-serif;
-}
-  
-    .courses-hero-section {
-        position: relative;
-        height: 84vh;
-        background: url('/enroll/Assets/Images/courses.jpg') no-repeat center center;
-        background-size: cover;
-        background-color: #838383; /* Fallback color */
-        overflow: hidden;
-        text-shadow:#ffffff;
-        display: flex;
-        background-size: cover;
-        padding: 20px;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
+    <!-- Optional SVG for Scalable Icons -->
+    <link rel="icon" href="/enroll/favicon.svg" type="image/svg+xml">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .courses-hero-section {
+            position: relative;
+            height: 84vh;
+            background: url('/enroll/Assets/Images/courses.jpg') no-repeat center center;
+            background-size: cover;
+            background-color: #838383;
+            /* Fallback color */
+            overflow: hidden;
+            text-shadow: #ffffff;
+            display: flex;
+            background-size: cover;
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
 
 
-    }
-    .courses-hero-section h1 {
+        }
+
+        .courses-hero-section h1 {
             color: rgb(3, 3, 3);
             font-size: 3.5rem;
             text-align: center;
         }
 
-/* Course Section */
-.course-section {
-    padding: 40px 0;
-}
+        /* Course Section */
+        .course-section {
+            padding: 40px 0;
+        }
 
-.course-container {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease;
-    min-height: 400px; /* Ensure all cards have the same height */
-}
+        .course-container {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            min-height: 400px;
+            /* Ensure all cards have the same height */
+        }
 
-.course-container:hover {
-    transform: translateY(-10px);
-}
+        .course-container:hover {
+            transform: translateY(-10px);
+        }
 
-/* Image Styling */
-.card-img-top {
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    width: 100%;
-}
+        /* Image Styling */
+        .card-img-top {
+            height: 200px;
+            /* Fixed height for consistency */
+            object-fit: cover;
+            /* Ensures the image covers the area without distortion */
+            width: 100%;
+        }
 
-.custom-img {
-    height: 200px; /* Ensure a uniform height */
-    object-fit: cover; /* Keeps the image covering the full container without distortion */
-    width: 100%;
-    display: block;
-}
+        .custom-img {
+            height: 200px;
+            /* Ensure a uniform height */
+            object-fit: cover;
+            /* Keeps the image covering the full container without distortion */
+            width: 100%;
+            display: block;
+        }
 
-/* Ensure all cards have the same height */
-.card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
+        /* Ensure all cards have the same height */
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
 
-/* Make the card-body stretch and push the button to the bottom */
-.card-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    max-height: calc(100% - 220px); /* Adjust based on header, button size, and padding */
+        /* Make the card-body stretch and push the button to the bottom */
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            max-height: calc(100% - 220px);
+            /* Adjust based on header, button size, and padding */
 
-}
+        }
 
-.card-body h3 {
-    font-size: 1.75rem;
-    margin-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+        .card-body h3 {
+            font-size: 1.75rem;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
 
-.card-body h6 {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+        .card-body h6 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
 
-/* Button styling */
-.btn-secondary {
-    background-color: #01060c;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin-top: auto;
-}
+        /* Button styling */
+        .btn-secondary {
+            background-color: #01060c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
+        }
 
-.btn-secondary:hover {
-    background-color: #5a5b5c;
-}
+        .btn-secondary:hover {
+            background-color: #5a5b5c;
+        }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .courses-hero-section {
-        height: 40vh;
-        padding: 10px;
-    }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .courses-hero-section {
+                height: 40vh;
+                padding: 10px;
+            }
 
-    .courses-hero-section h1{
-        font-size: 28px
-    }
+            .courses-hero-section h1 {
+                font-size: 28px
+            }
 
-    .courses-hero-section h4{
-        font-size: 14px;
-        padding-bottom: 10px;
-    }
+            .courses-hero-section h4 {
+                font-size: 14px;
+                padding-bottom: 10px;
+            }
 
-    .courses-hero-section a {
-        font-size: 14px;
-    }
+            .courses-hero-section a {
+                font-size: 14px;
+            }
 
-    .courses-hero-section h1 {
-        font-size: 2.5rem;
-    }
+            .courses-hero-section h1 {
+                font-size: 2.5rem;
+            }
 
-    .course-container {
-        flex-direction: column;
-        min-height: 350px; /* Ensure all cards have the same height */
-}
-    }
+            .course-container {
+                flex-direction: column;
+                min-height: 350px;
+                /* Ensure all cards have the same height */
+            }
+        }
 
-    .custom-img {
-        height: 150px; /* Smaller height for images on mobile */
-    }
+        .custom-img {
+            height: 150px;
+            /* Smaller height for images on mobile */
+        }
 
-    .course-image img {
-        border-radius: 0;
-    }
+        .course-image img {
+            border-radius: 0;
+        }
     </style>
 </head>
 
 <body>
-<div id="header"></div>
+    <div id="header"></div>
     <!-- Hero Section -->
     <section class="courses-hero-section">
         <div class="hero-overlay"></div>
@@ -180,7 +192,9 @@
     <section class="course-section">
         <div class="container">
             <h4 class="text-center">
-                Our wide range of courses are tailored to help you thrive in the digital age. From foundational skills to advanced programs, each course is designed by industry experts to provide you with the knowledge and hands-on experience needed to excel in your chosen field.
+                Our wide range of courses are tailored to help you thrive in the digital age. From foundational skills
+                to advanced programs, each course is designed by industry experts to provide you with the knowledge and
+                hands-on experience needed to excel in your chosen field.
             </h4>
         </div>
     </section>
@@ -191,367 +205,528 @@
             <div class="row">
 
                 <!-- Course 1 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
+                <div class="col-md-6 col-lg-4 mb-4">
                     <div class="course-container">
                         <div class="course-image">
-                            <img src="/enroll/Assets/Images/dabi.jpg" class="card-img-top custom-img" alt="Data Analysis and Business Intelligence">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Data Analysis and Business Intelligence</h3>
-                            <h6>Become a data-driven decision maker with our comprehensive data analysis course. Learn to interpret complex data sets, draw meaningful insights, and apply them to real-world scenarios.</h6>
-                            <a href="/enroll/courses-overview/dabi.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 2 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/webdev.jpg" class="card-img-top custom-img" alt="Web Development">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Web Development</h3>
-                            <h6>Build the future with our Web Development course. Learn to create dynamic, responsive websites using the latest technologies and best practices.</h6>
-                            <a href="/enroll/courses-overview/webdev.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 3 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/python.jpg" class="card-img-top custom-img" alt="Python Programming">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Python Programming</h3>
-                            <h6>Master the fundamentals of Python programming. From basics to advanced concepts, this course is your gateway to versatile coding skills.</h6>
-                            <a href="/enroll/courses-overview/python.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 4 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/ai.jpg" class="card-img-top custom-img" alt="AI for Business">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>AI for Business</h3>
-                            <h6>Discover how to harness AI for daily business operations. Learn to implement AI-driven strategies that optimize productivity and growth.</h6>
-                            <a href="/enroll/courses-overview/ai.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 5 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/computer.jpg" class="card-img-top custom-img" alt="Intro to Computer & Technology">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Intro to Computer & Technology</h3>
-                            <h6>Begin your journey into the world of computers and technology. Learn foundational concepts and skills essential for today’s digital age.</h6>
-                            <a href="/enroll/courses-overview/ictech.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 6 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/mba.jpg" class="card-img-top custom-img" alt="MBA Essentials">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>MBA Essentials</h3>
-                            <h6>Develop critical business leadership skills. Learn the essentials of management, finance, and entrepreneurship to excel in your career.</h6>
-                            <a href="/enroll/courses-overview/mba.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 7 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/algorithm-3859537_1280.jpg" class="card-img-top custom-img" alt="AI & Machine Learning">
+                            <img src="/enroll/Assets/Images/algorithm-3859537_1280.jpg" class="card-img-top custom-img"
+                                alt="AI & Machine Learning">
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h3>AI & Machine Learning</h3>
-                            <h6>Dive deep into the world of AI and machine learning. Learn to build intelligent systems that solve real-world problems.</h6>
+                            <h6>Dive deep into the world of AI and machine learning. Learn to build intelligent systems
+                                that solve real-world problems.</h6>
                             <a href="/enroll/courses-overview/aiml.html" class="btn-secondary">Learn More</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Course 8 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
+                <!-- Course 2 -->
+                <div class="col-md-6 col-lg-4 mb-4">
                     <div class="course-container">
                         <div class="course-image">
-                            <img src="/enroll/Assets/Images/money.jpg" class="card-img-top custom-img" alt="Money Management">
+                            <img src="/enroll/Assets/Images/ai.jpg" class="card-img-top custom-img"
+                                alt="AI for Business">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h3>Money Management</h3>
-                            <h6>Master the art of managing money. Gain essential financial skills to budget, invest, and secure your financial future.</h6>
-                            <a href="/enroll/courses-overview/money.html" class="btn-secondary">Learn More</a>
+                            <h3>AI for Business</h3>
+                            <h6>Discover how to harness AI for daily business operations. Learn to implement AI-driven
+                                strategies that optimize productivity and growth.</h6>
+                            <a href="/enroll/courses-overview/ai.html" class="btn-secondary">Learn More</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Course 9 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
+                <!-- Course 3 -->
+                <div class="col-md-6 col-lg-4 mb-4">
                     <div class="course-container">
                         <div class="course-image">
-                            <img src="/enroll/Assets/Images/history.jpg" class="card-img-top custom-img" alt="World History">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>World History</h3>
-                            <h6>Explore key events and milestones in world history. Understand the past to better navigate the present and future.</h6>
-                            <a href="/enroll/courses-overview/worldhistory.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 10 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/thinking.jpg" class="card-img-top custom-img" alt="Critical Thinking">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Critical Thinking</h3>
-                            <h6>Sharpen your decision-making and problem-solving skills. Learn techniques to approach problems logically and creatively.</h6>
-                            <a href="/enroll/courses-overview/criticalthinking.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 11 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/freelance-4523096_1280.jpg" class="card-img-top custom-img" alt="Freelance Fundamentals">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Freelance Fundamentalsy</h3>
-                            <h6>Kickstart your freelance career. Learn the essential skills and strategies to succeed as a freelancer in today’s competitive market.</h6>
-                            <a href="/enroll/courses-overview/freelance.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 12 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/ms.jpg" class="card-img-top custom-img" alt="MS Office">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>MS Office</h3>
-                            <h6>Become proficient in Microsoft Office. Learn to use Word, Excel, PowerPoint, and other tools to boost your productivity.</h6>
-                            <a href="/enroll/courses-overview/msoffice.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 13 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/editing-7320125_1280 (1).jpg" class="card-img-top custom-img" alt="Video Editing">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Video Editing</h3>
-                            <h6>Bring stories to life with video editing. Learn industry-standard tools and techniques to create engaging videos.</h6>
-                            <a href="/enroll/courses-overview/video.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 14 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/graphics.jpg" class="card-img-top custom-img" alt="Graphic Design">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Graphic Design</h3>
-                            <h6>Unleash your creativity with graphic design. Master the tools and principles to design stunning visuals for digital and print media.</h6>
-                            <a href="/enroll/courses-overview/graphics.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 15 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/creative.jpg" class="card-img-top custom-img" alt="Creative Writing">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Creative Writing</h3>
-                            <h6>Ignite your imagination and writing skills. Learn the craft of storytelling and writing in various genres for different audiences</h6>
-                             <a href="/enroll/courses-overview/creative.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 16 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/technical.jpg" class="card-img-top custom-img" alt="Technical Writing">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Technical Writing</h3>
-                            <h6>Develop essential technical writing skills. Learn to create clear, concise, and effective documentation for technical fields.</h6>
-                            <a href="/enroll/courses-overview/technical.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 17 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/copywriting.jpg" class="card-img-top custom-img" alt="Copywriting">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Copywriting</h3>
-                            <h6>Master the art of persuasive writing. Learn to craft compelling copy that captivates audiences and drives action.</h6>
-                            <a href="/enroll/courses-overview/copy.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 18 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/consult.jpg" class="card-img-top custom-img" alt="Business Consultation">
+                            <img src="/enroll/Assets/Images/consult.jpg" class="card-img-top custom-img"
+                                alt="Business Consultation">
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h3>Business Consultation</h3>
-                            <h6>Unlock the essentials of business consultation. From foundational strategies to advanced techniques, this course equips you with the tools to drive business growth and provide expert guidance across industries</h6>
+                            <h6>Unlock the essentials of business consultation. From foundational strategies to advanced
+                                techniques, this course equips you with the tools to drive business growth and provide
+                                expert guidance across industries</h6>
                             <a href="/enroll/courses-overview/businessconsult.html" class="btn-secondary">Learn More</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Course 19 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
+                <!-- Course 4 -->
+                <div class="col-md-6 col-lg-4 mb-4">
                     <div class="course-container">
                         <div class="course-image">
-                            <img src="/enroll/Assets/Images/content.jpg" class="card-img-top custom-img" alt="Content Development">
+                            <img src="/enroll/Assets/Images/content.jpg" class="card-img-top custom-img"
+                                alt="Content Development">
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h3>Content Development</h3>
-                            <h6>Create compelling content that resonates. Learn to develop engaging and informative content for various platforms.</h6>
+                            <h6>Create compelling content that resonates. Learn to develop engaging and informative
+                                content for various platforms.</h6>
                             <a href="/enroll/courses-overview/contentdev.html" class="btn-secondary">Learn More</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Course 20 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
+                <!-- Course 5 -->
+                <div class="col-md-6 col-lg-4 mb-4">
                     <div class="course-container">
                         <div class="course-image">
-                            <img src="/enroll/Assets/Images/digital-marketing.jpg" class="card-img-top custom-img" alt="Digital Marketing">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Digital Marketing</h3>
-                            <h6>Master digital marketing strategies. Learn SEO, social media, and analytics to build and grow brands online.</h6>
-                            <a href="/enroll/courses-overview/digitalmarketing.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 21 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/project-management-2738521_1280.jpg" class="card-img-top custom-img" alt="Project Management">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Project Management</h3>
-                            <h6>Lead teams to success with effective project management skills. Learn to plan, execute, and deliver projects on time and within scope.</h6>
-                            <a href="/enroll/courses-overview/projectmanagement.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 22 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/solar.jpg" class="card-img-top custom-img" alt="Sustainable Development & Green Technologies">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Sustainable Development & Green Technologiess</h3>
-                            <h6>Embrace sustainability with green technologies. Learn how to implement environmentally friendly solutions for a better future.</h6>
-                        <a href="/enroll/courses-overview/sustainable.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 23 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/cyber-4610993_1280.jpg" class="card-img-top custom-img" alt="Cybersecurity">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>Cybersecurity</h3>
-                            <h6>Protect the digital world with cybersecurity skills. Learn to identify threats and secure systems from cyber-attacks.</h6>
-                            <a href="/enroll/courses-overview/cybersecurity.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course 24 -->
-                <div class="col-md-6 col-lg-4 mb-4">   
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/ux.jpg" class="card-img-top custom-img" alt="UI & UX Design">
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <h3>UI & UX Design</h3>
-                            <h6>Design intuitive user interfaces and experiences. Learn the principles of creating user-friendly, engaging digital products.</h6>
-                            <a href="/enroll/courses-overview/uiux.html" class="btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Course 25 -->
-                 <div class="col-md-6 col-lg-4 mb-4">   
-
-                    <div class="course-container">
-                        <div class="course-image">
-                            <img src="/enroll/Assets/Images/gov.jpg" class="card-img-top custom-img" alt="Corporate Governance">
+                            <img src="/enroll/Assets/Images/gov.jpg" class="card-img-top custom-img"
+                                alt="Corporate Governance">
                         </div>
                         <div class="card-body d-flex flex-column">
                             <h3>Corporate Governance</h3>
-                            <h6>Understand corporate structures and governance. Learn how companies are directed and controlled for success and compliance.</h6>
+                            <h6>Understand corporate structures and governance. Learn how companies are directed and
+                                controlled for success and compliance.</h6>
                             <a href="/enroll/courses-overview/corporategov.html" class="btn-secondary">Learn More</a>
                         </div>
+                    </div>
+
+                    <!-- Course 6 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/copywriting.jpg" class="card-img-top custom-img"
+                                    alt="Copywriting">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Copywriting</h3>
+                                <h6>Master the art of persuasive writing. Learn to craft compelling copy that captivates
+                                    audiences and drives action.</h6>
+                                <a href="/enroll/courses-overview/copy.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 7-->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/creative.jpg" class="card-img-top custom-img"
+                                    alt="Creative Writing">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Creative Writing</h3>
+                                <h6>Ignite your imagination and writing skills. Learn the craft of storytelling and
+                                    writing
+                                    in various genres for different audiences</h6>
+                                <a href="/enroll/courses-overview/creative.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 8 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/thinking.jpg" class="card-img-top custom-img"
+                                    alt="Critical Thinking">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Critical Thinking</h3>
+                                <h6>Sharpen your decision-making and problem-solving skills. Learn techniques to
+                                    approach
+                                    problems logically and creatively.</h6>
+                                <a href="/enroll/courses-overview/criticalthinking.html" class="btn-secondary">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 9 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/cyber-4610993_1280.jpg" class="card-img-top custom-img"
+                                    alt="Cybersecurity">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Cybersecurity</h3>
+                                <h6>Protect the digital world with cybersecurity skills. Learn to identify threats and
+                                    secure systems from cyber-attacks.</h6>
+                                <a href="/enroll/courses-overview/cybersecurity.html" class="btn-secondary">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 10 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/dabi.jpg" class="card-img-top custom-img"
+                                    alt="Data Analysis and Business Intelligence">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Data Analysis and Business Intelligence</h3>
+                                <h6>Become a data-driven decision maker with our comprehensive data analysis course.
+                                    Learn
+                                    to interpret complex data sets, draw meaningful insights, and apply them to
+                                    real-world
+                                    scenarios.</h6>
+                                <a href="/enroll/courses-overview/dabi.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 11 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/digital-marketing.jpg" class="card-img-top custom-img"
+                                    alt="Digital Marketing">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Digital Marketing</h3>
+                                <h6>Master digital marketing strategies. Learn SEO, social media, and analytics to build
+                                    and
+                                    grow brands online.</h6>
+                                <a href="/enroll/courses-overview/digitalmarketing.html" class="btn-secondary">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 12 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/entrepreneur.jpg" class="card-img-top custom-img"
+                                    alt="Entrepreneur">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3> Entrepreneurship/ Business</h3>
+                                <h6>Explore the fundamentals of launching and running a business, from ideation to
+                                    scaling strategies. Perfect for aspiring entrepreneurs, this course includes
+                                    practical approaches to financing, marketing, and management.</h6>
+                                <a href="/enroll/courses-overview/entrepreneur.html" class="btn-secondary">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 13 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/freelance-4523096_1280.jpg"
+                                    class="card-img-top custom-img" alt="Freelance Fundamentals">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Freelance Fundamentalsy</h3>
+                                <h6>Kickstart your freelance career. Learn the essential skills and strategies to
+                                    succeed as
+                                    a freelancer in today’s competitive market.</h6>
+                                <a href="/enroll/courses-overview/freelance.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 14 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/game.jpg" class="card-img-top custom-img"
+                                    alt="Game Development">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3> Game Development</h3>
+                                <h6>The Game Development course offers insight into game design, coding, and graphics.
+                                    Whether you’re interested in mobile or console platforms, this course provides
+                                    hands-on experience to bring your gaming ideas to life. </h6>
+                                <a href="/enroll/courses-overview/game.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 15 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/graphics.jpg" class="card-img-top custom-img"
+                                    alt="Graphic Design">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Graphic Design</h3>
+                                <h6>Unleash your creativity with graphic design. Master the tools and principles to
+                                    design
+                                    stunning visuals for digital and print media.</h6>
+                                <a href="/enroll/courses-overview/graphics.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 16 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/computer.jpg" class="card-img-top custom-img"
+                                    alt="Intro to Computer & Technology">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Intro to Computer & Technology</h3>
+                                <h6>Begin your journey into the world of computers and technology. Learn foundational
+                                    concepts and skills essential for today’s digital age.</h6>
+                                <a href="/enroll/courses-overview/ictech.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 17 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/mba.jpg" class="card-img-top custom-img"
+                                    alt="MBA Essentials">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>MBA Essentials</h3>
+                                <h6>Develop critical business leadership skills. Learn the essentials of management,
+                                    finance, and entrepreneurship to excel in your career.</h6>
+                                <a href="/enroll/courses-overview/mba.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 18 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/ms.jpg" class="card-img-top custom-img" alt="MS Office">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>MS Office</h3>
+                                <h6>This course covers Microsoft Office essentials, including Word, Excel, and
+                                    PowerPoint. Gain proficiency in these tools to improve productivity, whether for
+                                    professional tasks or personal projects.</h6>
+                                <a href="/enroll/courses-overview/msoffice.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 19 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/money.jpg" class="card-img-top custom-img"
+                                    alt="Money Management">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Money Management</h3>
+                                <h6>Master the art of managing money. Gain essential financial skills to budget, invest,
+                                    and
+                                    secure your financial future.</h6>
+                                <a href="/enroll/courses-overview/money.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 20 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/project-management-2738521_1280.jpg"
+                                    class="card-img-top custom-img" alt="Project Management">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Project Management</h3>
+                                <h6>Lead teams to success with effective project management skills. Learn to plan,
+                                    execute,
+                                    and deliver projects on time and within scope.</h6>
+                                <a href="/enroll/courses-overview/projectmanagement.html" class="btn-secondary">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 21 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/python.jpg" class="card-img-top custom-img"
+                                    alt="Python Programming">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Python Programming</h3>
+                                <h6>Master the fundamentals of Python programming. From basics to advanced concepts,
+                                    this
+                                    course is your gateway to versatile coding skills.</h6>
+                                <a href="/enroll/courses-overview/python.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 22 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/sales.jpg" class="card-img-top custom-img" alt="Sales">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3> Sales
+                                </h3>
+                                <h6>Learn essential sales techniques and strategies to communicate value effectively and
+                                    close deals. This course prepares you for a successful career in sales or to enhance
+                                    your entrepreneurial skillset.</h6>
+                                <a href="/enroll/courses-overview/sales.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Course 23 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/software.jpg" class="card-img-top custom-img" alt="Software 
+                        Development">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Software
+                                    Development
+                                </h3>
+                                <h6>Master the fundamentals of Software
+                                    Development. From basics to advanced concepts, this course is your gateway to
+                                    versatile coding skills.</h6>
+                                <a href="/enroll/courses-overview/software.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 24 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/solar.jpg" class="card-img-top custom-img"
+                                    alt="Sustainable Development & Green Technologies">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Sustainable Development & Green Technologiess</h3>
+                                <h6>Embrace sustainability with green technologies. Learn how to implement
+                                    environmentally
+                                    friendly solutions for a better future.</h6>
+                                <a href="/enroll/courses-overview/sustainable.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 25 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/technical.jpg" class="card-img-top custom-img"
+                                    alt="Technical Writing">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Technical Writing</h3>
+                                <h6>Develop essential technical writing skills. Learn to create clear, concise, and
+                                    effective documentation for technical fields.</h6>
+                                <a href="/enroll/courses-overview/technical.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 26 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/ux.jpg" class="card-img-top custom-img"
+                                    alt="UI & UX Design">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>UI & UX Design</h3>
+                                <h6>Design intuitive user interfaces and experiences. Learn the principles of creating
+                                    user-friendly, engaging digital products.</h6>
+                                <a href="/enroll/courses-overview/uiux.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 27 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/editing-7320125_1280 (1).jpg"
+                                    class="card-img-top custom-img" alt="Video Editing">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Video Editing</h3>
+                                <h6>Bring stories to life with video editing. Learn industry-standard tools and
+                                    techniques
+                                    to create engaging videos.</h6>
+                                <a href="/enroll/courses-overview/video.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 28 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/webdev.jpg" class="card-img-top custom-img"
+                                    alt="Web Development">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Web Development</h3>
+                                <h6>Build the future with our Web Development course. Learn to create dynamic,
+                                    responsive
+                                    websites using the latest technologies and best practices.</h6>
+                                <a href="/enroll/courses-overview/webdev.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 29 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/history.jpg" class="card-img-top custom-img"
+                                    alt="World History">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>World History</h3>
+                                <h6>Explore key events and milestones in world history. Understand the past to better
+                                    navigate the present and future.</h6>
+                                <a href="/enroll/courses-overview/worldhistory.html" class="btn-secondary">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 30 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="course-container">
+                            <div class="course-image">
+                                <img src="/enroll/Assets/Images/writing.jpg" class="card-img-top custom-img"
+                                    alt="Writing">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3>Writing</h3>
+                                <h6>Gain the fundamentals of Writing. For differnt forms and audience, this course will
+                                    guide you to become better writers.</h6>
+                                <a href="/enroll/courses-overview/writing.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More Courses -->
+
                 </div>
             </div>
-        </div>
     </section>
-    
-<!-- Apply Section -->
+
+    <!-- Apply Section -->
     <section id="apply" class="apply-section">
         <div class="container">
             <h2>Apply Now</h2>
-            <h6>Ready to take the next step? Apply for our courses today and join a community of learners dedicated to growth and success.</p>
-            <a href="/enroll/apply.html" class="btn-primary">Apply Today</a>
+            <h6>Ready to take the next step? Apply for our courses today and join a community of learners dedicated to
+                growth and success.</p>
+                <a href="/enroll/apply.html" class="btn-primary">Apply Today</a>
         </div>
     </section>
- 
-<div id="footer"></div>
+
+    <div id="footer"></div>
 
     <script>
         function loadHTML(selector, url) {
@@ -567,21 +742,23 @@
     </script>
 
 
-    </style><script id="dcoder_script">// scripts.js
-    
-    // Smooth Scroll for Navigation Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+    </style>
+    <script id="dcoder_script">// scripts.js
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
-    });
-    
-    // Example of future interactivity, such as dynamic content loading or form validation
+
+        // Example of future interactivity, such as dynamic content loading or form validation
     </script>
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>    
-</body></html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+</body>
+
+</html>
